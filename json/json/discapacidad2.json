@@ -1,0 +1,23 @@
+[
+
+	{
+		"IDITEM": "I",
+		"DESCRIPCION": "INTELECTUAL"
+	},
+	{
+		"IDITEM": "F",
+		"DESCRIPCION": "FISICA"
+	},
+	{
+		"IDITEM": "A",
+		"DESCRIPCION": "AUDITIVA"
+	},
+	{
+		"IDITEM": "V",
+		"DESCRIPCION": "VISUAL"
+	},
+	{
+		"IDITEM": "P",
+		"DESCRIPCION": "PSICOSOCIAL"
+	}
+]

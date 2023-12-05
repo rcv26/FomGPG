@@ -1,0 +1,529 @@
+{
+   "PARROQUIAS":[
+    {
+        "IDPARROQUIA": 163,
+        "NOMBRE": "Juan Gómez Rendón",
+        "IDCANTON": 111
+    },
+    {
+        "IDPARROQUIA": 164,
+        "NOMBRE": "Puná",
+        "IDCANTON": 111
+    },
+    {
+        "IDPARROQUIA": 165,
+        "NOMBRE": "Tenguel",
+        "IDCANTON": 111
+    },
+    {
+        "IDPARROQUIA": 166,
+        "NOMBRE": "Posorja",
+        "IDCANTON": 111
+    },
+    {
+        "IDPARROQUIA": 167,
+        "NOMBRE": "El Morro",
+        "IDCANTON": 111
+    },
+    {
+        "IDPARROQUIA": 168,
+        "NOMBRE": "El Rosario",
+        "IDCANTON": 106
+    },
+    {
+        "IDPARROQUIA": 169,
+        "NOMBRE": "Guayas",
+        "IDCANTON": 106
+    },
+    {
+        "IDPARROQUIA": 170,
+        "NOMBRE": "San Jacinto",
+        "IDCANTON": 104
+    },
+    {
+        "IDPARROQUIA": 171,
+        "NOMBRE": "Laurel",
+        "IDCANTON": 105
+    },
+    {
+        "IDPARROQUIA": 172,
+        "NOMBRE": "Juan Bautista Aguirre",
+        "IDCANTON": 105
+    },
+    {
+        "IDPARROQUIA": 173,
+        "NOMBRE": "Los Lojas",
+        "IDCANTON": 105
+    },
+    {
+        "IDPARROQUIA": 174,
+        "NOMBRE": "Limonal",
+        "IDCANTON": 105
+    },
+    {
+        "IDPARROQUIA": 175,
+        "NOMBRE": "Chobo",
+        "IDCANTON": 115
+    },
+    {
+        "IDPARROQUIA": 176,
+        "NOMBRE": "Roberto Astudillo",
+        "IDCANTON": 115
+    },
+    {
+        "IDPARROQUIA": 177,
+        "NOMBRE": "Mariscal Sucre",
+        "IDCANTON": 115
+    },
+    {
+        "IDPARROQUIA": 178,
+        "NOMBRE": "Jesús María",
+        "IDCANTON": 116
+    },
+    {
+        "IDPARROQUIA": 179,
+        "NOMBRE": "San Carlos",
+        "IDCANTON": 116
+    },
+    {
+        "IDPARROQUIA": 180,
+        "NOMBRE": "Santa Rosa de Flandes",
+        "IDCANTON": 116
+    },
+    {
+        "IDPARROQUIA": 181,
+        "NOMBRE": "Taura",
+        "IDCANTON": 116
+    },
+    {
+        "IDPARROQUIA": 182,
+        "NOMBRE": "Sabanilla",
+        "IDCANTON": 120
+    },
+    {
+        "IDPARROQUIA": 183,
+        "NOMBRE": "Valle de la Virgen",
+        "IDCANTON": 120
+    },
+    {
+        "IDPARROQUIA": 184,
+        "NOMBRE": "Junquillal",
+        "IDCANTON": 121
+    },
+    {
+        "IDPARROQUIA": 185,
+        "NOMBRE": "La Victoria",
+        "IDCANTON": 121
+    },
+    {
+        "IDPARROQUIA": 186,
+        "NOMBRE": "Vernaza",
+        "IDCANTON": 121
+    },
+    {
+        "IDPARROQUIA": 187,
+        "NOMBRE": "Tarifa",
+        "IDCANTON": 122
+    },
+    {
+        "IDPARROQUIA": 188,
+        "NOMBRE": "Lorenzo de Garaicoa",
+        "IDCANTON": 124
+    },
+    {
+        "IDPARROQUIA": 189,
+        "NOMBRE": "Pedro J. Montero",
+        "IDCANTON": 125
+    },
+    {
+        "IDPARROQUIA": 190,
+        "NOMBRE": "Virgen de Fátima",
+        "IDCANTON": 125
+    },
+    {
+        "IDPARROQUIA": 191,
+        "NOMBRE": "Cone",
+        "IDCANTON": 125
+    },
+    {
+        "IDPARROQUIA": 192,
+        "NOMBRE": "PEDRO CARBO",
+        "IDCANTON": 111
+    },
+    {
+        "IDPARROQUIA": 193,
+        "NOMBRE": "FRANCISCO ROCA",
+        "IDCANTON": 111
+    },
+    {
+        "IDPARROQUIA": 194,
+        "NOMBRE": "TARQUI",
+        "IDCANTON": 111
+    },
+    {
+        "IDPARROQUIA": 195,
+        "NOMBRE": "ROCAFUERTE",
+        "IDCANTON": 111
+    },
+    {
+        "IDPARROQUIA": 196,
+        "NOMBRE": "NUEVE DE OCTUBRE",
+        "IDCANTON": 111
+    },
+    {
+        "IDPARROQUIA": 197,
+        "NOMBRE": "OLMEDO",
+        "IDCANTON": 111
+    },
+    {
+        "IDPARROQUIA": 198,
+        "NOMBRE": "BOLÍVAR",
+        "IDCANTON": 111
+    },
+    {
+        "IDPARROQUIA": 199,
+        "NOMBRE": "SUCRE",
+        "IDCANTON": 111
+    },
+    {
+        "IDPARROQUIA": 200,
+        "NOMBRE": "URDANETA",
+        "IDCANTON": 111
+    },
+    {
+        "IDPARROQUIA": 201,
+        "NOMBRE": "AYACUCHO",
+        "IDCANTON": 111
+    },
+    {
+        "IDPARROQUIA": 202,
+        "NOMBRE": "GARCÍA MORENO",
+        "IDCANTON": 111
+    },
+    {
+        "IDPARROQUIA": 203,
+        "NOMBRE": "XIMENA",
+        "IDCANTON": 111
+    },
+    {
+        "IDPARROQUIA": 204,
+        "NOMBRE": "FEBRES CORDERO",
+        "IDCANTON": 111
+    },
+    {
+        "IDPARROQUIA": 205,
+        "NOMBRE": "PASCUALES",
+        "IDCANTON": 111
+    },
+    {
+        "IDPARROQUIA": 206,
+        "NOMBRE": "CHONGÓN",
+        "IDCANTON": 111
+    },
+    {
+        "IDPARROQUIA": 207,
+        "NOMBRE": "LETAMENDI",
+        "IDCANTON": 111
+    },
+    {
+        "IDPARROQUIA": 208,
+        "NOMBRE": "COLIMES",
+        "IDCANTON": 104
+    },
+    {
+        "IDPARROQUIA": 209,
+        "NOMBRE": "DAULE",
+        "IDCANTON": 105
+    },
+    {
+        "IDPARROQUIA": 210,
+        "NOMBRE": "EMILIANO CAICEDO MARCOS",
+        "IDCANTON": 105
+    },
+    {
+        "IDPARROQUIA": 211,
+        "NOMBRE": "LA AURORA",
+        "IDCANTON": 105
+    },
+    {
+        "IDPARROQUIA": 212,
+        "NOMBRE": "MAGRO",
+        "IDCANTON": 105
+    },
+    {
+        "IDPARROQUIA": 213,
+        "NOMBRE": "VELASCO IBARRA",
+        "IDCANTON": 106
+    },
+    {
+        "IDPARROQUIA": 214,
+        "NOMBRE": "EL TRIUNFO",
+        "IDCANTON": 107
+    },
+    {
+        "IDPARROQUIA": 215,
+        "NOMBRE": "EL RECREO",
+        "IDCANTON": 108
+    },
+    {
+        "IDPARROQUIA": 216,
+        "NOMBRE": "ELOY ALFARO /DURÁN",
+        "IDCANTON": 108
+    },
+    {
+        "IDPARROQUIA": 217,
+        "NOMBRE": "GRAL.ELIZALDE / BUCAY",
+        "IDCANTON": 109
+    },
+    {
+        "IDPARROQUIA": 218,
+        "NOMBRE": "GRAL.VILLAMIL / PLAYAS",
+        "IDCANTON": 110
+    },
+    {
+        "IDPARROQUIA": 219,
+        "NOMBRE": "ISIDRO AYORA",
+        "IDCANTON": 112
+    },
+    {
+        "IDPARROQUIA": 220,
+        "NOMBRE": "LOMAS DE SARGENTILLO",
+        "IDCANTON": 113
+    },
+    {
+        "IDPARROQUIA": 221,
+        "NOMBRE": "CRNL. MARCELINO MARIDUEÑAS",
+        "IDCANTON": 114
+    },
+    {
+        "IDPARROQUIA": 222,
+        "NOMBRE": "MILAGRO",
+        "IDCANTON": 115
+    },
+    {
+        "IDPARROQUIA": 223,
+        "NOMBRE": "NARANJAL",
+        "IDCANTON": 116
+    },
+    {
+        "IDPARROQUIA": 224,
+        "NOMBRE": "NARANJITO",
+        "IDCANTON": 117
+    },
+    {
+        "IDPARROQUIA": 225,
+        "NOMBRE": "NARCISA DE JESÚS",
+        "IDCANTON": 118
+    },
+    {
+        "IDPARROQUIA": 226,
+        "NOMBRE": "PALESTINA",
+        "IDCANTON": 119
+    },
+    {
+        "IDPARROQUIA": 227,
+        "NOMBRE": "PEDRO CARBO",
+        "IDCANTON": 120
+    },
+    {
+        "IDPARROQUIA": 228,
+        "NOMBRE": "BOCANA",
+        "IDCANTON": 121
+    },
+    {
+        "IDPARROQUIA": 229,
+        "NOMBRE": "CANDILEJOS",
+        "IDCANTON": 121
+    },
+    {
+        "IDPARROQUIA": 230,
+        "NOMBRE": "PARAÍSO",
+        "IDCANTON": 121
+    },
+    {
+        "IDPARROQUIA": 231,
+        "NOMBRE": "SALITRE",
+        "IDCANTON": 121
+    },
+    {
+        "IDPARROQUIA": 232,
+        "NOMBRE": "SAN MATEO",
+        "IDCANTON": 121
+    },
+    {
+        "IDPARROQUIA": 233,
+        "NOMBRE": "LA PUNTILLA (SATÉLITE)",
+        "IDCANTON": 122
+    },
+    {
+        "IDPARROQUIA": 234,
+        "NOMBRE": "SAMBORONDÓN",
+        "IDCANTON": 122
+    },
+    {
+        "IDPARROQUIA": 235,
+        "NOMBRE": "SANTA LUCÍA",
+        "IDCANTON": 123
+    },
+    {
+        "IDPARROQUIA": 236,
+        "NOMBRE": "SIMÓN BOLÍVAR",
+        "IDCANTON": 124
+    },
+    {
+        "IDPARROQUIA": 237,
+        "NOMBRE": "YAGUACHI NUEVO",
+        "IDCANTON": 125
+    },
+    {
+        "IDPARROQUIA": 238,
+        "NOMBRE": "BALAO",
+        "IDCANTON": 102
+    },
+    {
+        "IDPARROQUIA": 239,
+        "NOMBRE": "BALZAR",
+        "IDCANTON": 103
+    },
+    {
+        "IDPARROQUIA": 240,
+        "NOMBRE": "A.BAQUERIZO M. / JÚJAN",
+        "IDCANTON": 101
+    },
+    {
+        "IDPARROQUIA": 241,
+        "NOMBRE": "PROGRESO",
+        "IDCANTON": 111
+    },
+    {
+        "IDPARROQUIA": 244,
+        "NOMBRE": "CABECERA CANTONAL",
+        "IDCANTON": 111
+    },
+    {
+        "IDPARROQUIA": 245,
+        "NOMBRE": "CABECERA CANTONAL",
+        "IDCANTON": 101
+    },
+    {
+        "IDPARROQUIA": 246,
+        "NOMBRE": "CABECERA CANTONAL",
+        "IDCANTON": 102
+    },
+    {
+        "IDPARROQUIA": 247,
+        "NOMBRE": "CABECERA CANTONAL",
+        "IDCANTON": 103
+    },
+    {
+        "IDPARROQUIA": 248,
+        "NOMBRE": "CABECERA CANTONAL",
+        "IDCANTON": 104
+    },
+    {
+        "IDPARROQUIA": 249,
+        "NOMBRE": "CABECERA CANTONAL",
+        "IDCANTON": 105
+    },
+    {
+        "IDPARROQUIA": 250,
+        "NOMBRE": "CABECERA CANTONAL",
+        "IDCANTON": 106
+    },
+    {
+        "IDPARROQUIA": 251,
+        "NOMBRE": "CABECERA CANTONAL",
+        "IDCANTON": 107
+    },
+    {
+        "IDPARROQUIA": 252,
+        "NOMBRE": "CABECERA CANTONAL",
+        "IDCANTON": 108
+    },
+    {
+        "IDPARROQUIA": 253,
+        "NOMBRE": "CABECERA CANTONAL",
+        "IDCANTON": 109
+    },
+    {
+        "IDPARROQUIA": 254,
+        "NOMBRE": "CABECERA CANTONAL",
+        "IDCANTON": 110
+    },
+    {
+        "IDPARROQUIA": 255,
+        "NOMBRE": "CABECERA CANTONAL",
+        "IDCANTON": 112
+    },
+    {
+        "IDPARROQUIA": 256,
+        "NOMBRE": "CABECERA CANTONAL",
+        "IDCANTON": 113
+    },
+    {
+        "IDPARROQUIA": 257,
+        "NOMBRE": "CABECERA CANTONAL",
+        "IDCANTON": 114
+    },
+    {
+        "IDPARROQUIA": 258,
+        "NOMBRE": "CABECERA CANTONAL",
+        "IDCANTON": 115
+    },
+    {
+        "IDPARROQUIA": 259,
+        "NOMBRE": "CABECERA CANTONAL",
+        "IDCANTON": 116
+    },
+    {
+        "IDPARROQUIA": 260,
+        "NOMBRE": "CABECERA CANTONAL",
+        "IDCANTON": 117
+    },
+    {
+        "IDPARROQUIA": 261,
+        "NOMBRE": "CABECERA CANTONAL",
+        "IDCANTON": 118
+    },
+    {
+        "IDPARROQUIA": 262,
+        "NOMBRE": "CABECERA CANTONAL",
+        "IDCANTON": 119
+    },
+    {
+        "IDPARROQUIA": 263,
+        "NOMBRE": "CABECERA CANTONAL",
+        "IDCANTON": 120
+    },
+    {
+        "IDPARROQUIA": 264,
+        "NOMBRE": "CABECERA CANTONAL",
+        "IDCANTON": 121
+    },
+    {
+        "IDPARROQUIA": 265,
+        "NOMBRE": "CABECERA CANTONAL",
+        "IDCANTON": 122
+    },
+    {
+        "IDPARROQUIA": 266,
+        "NOMBRE": "CABECERA CANTONAL",
+        "IDCANTON": 123
+    },
+    {
+        "IDPARROQUIA": 267,
+        "NOMBRE": "CABECERA CANTONAL",
+        "IDCANTON": 124
+    },
+    {
+        "IDPARROQUIA": 268,
+        "NOMBRE": "CABECERA CANTONAL",
+        "IDCANTON": 125
+    },
+    {
+        "IDPARROQUIA": 242,
+        "NOMBRE": "CHONGÓN",
+        "IDCANTON": 111
+    }
+]
+}

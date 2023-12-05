@@ -1,0 +1,129 @@
+{
+   "CANTONES":[
+    {
+        "IDCANTON": 101,
+        "NOMBRE": "Alfredo Baquerizo Moreno",
+        "IDPROVINCIA": 2
+    },
+    {
+        "IDCANTON": 102,
+        "NOMBRE": "Balao",
+        "IDPROVINCIA": 2
+    },
+    {
+        "IDCANTON": "103",
+        "NOMBRE": "Balzar",
+        "IDPROVINCIA": 2
+    },
+    {
+        "IDCANTON": 104,
+        "NOMBRE": "Colimes",
+        "IDPROVINCIA": 2
+    },
+    {
+        "IDCANTON": 105,
+        "NOMBRE": "Daule",
+        "IDPROVINCIA": 2
+    },
+    {
+        "IDCANTON": 106,
+        "NOMBRE": "El Empalme",
+        "IDPROVINCIA": 2
+    },
+    {
+        "IDCANTON": 107,
+        "NOMBRE": "El Triunfo",
+        "IDPROVINCIA": 2
+    },
+    {
+        "IDCANTON": 108,
+        "NOMBRE": "Eloy Alfaro",
+        "IDPROVINCIA": 2
+    },
+    {
+        "IDCANTON": 109,
+        "NOMBRE": "General Antonio Elizalde",
+        "IDPROVINCIA": 2
+    },
+    {
+        "IDCANTON": 110,
+        "NOMBRE": "General Villamil",
+        "IDPROVINCIA": 2
+    },
+    {
+        "IDCANTON": 111,
+        "NOMBRE": "Guayaquil",
+        "IDPROVINCIA": 2
+    },
+    {
+        "IDCANTON": 112,
+        "NOMBRE": "Isidro Ayora",
+        "IDPROVINCIA": 2
+    },
+    {
+        "IDCANTON": 113,
+        "NOMBRE": "Lomas de Sargentillo",
+        "IDPROVINCIA": 2
+    },
+    {
+        "IDCANTON": 114,
+        "NOMBRE": "Marcelino Maridueña",
+        "IDPROVINCIA": 2
+    },
+    {
+        "IDCANTON": 115,
+        "NOMBRE": "Milagro",
+        "IDPROVINCIA": 2
+    },
+    {
+        "IDCANTON": 116,
+        "NOMBRE": "Naranjal",
+        "IDPROVINCIA": 2
+    },
+    {
+        "IDCANTON": 117,
+        "NOMBRE": "Naranjito",
+        "IDPROVINCIA": 2
+    },
+    {
+        "IDCANTON": 118,
+        "NOMBRE": "Nobol",
+        "IDPROVINCIA": 2
+    },
+    {
+        "IDCANTON": 119,
+        "NOMBRE": "Palestina",
+        "IDPROVINCIA": 2
+    },
+    {
+        "IDCANTON": 120,
+        "NOMBRE": "Pedro Carbo",
+        "IDPROVINCIA": 2
+    },
+    {
+        "IDCANTON": 121,
+        "NOMBRE": "Salitre",
+        "IDPROVINCIA": 2
+    },
+    {
+        "IDCANTON": 122,
+        "NOMBRE": "Samborondón",
+        "IDPROVINCIA":2
+    },
+    {
+        "IDCANTON": 123,
+        "NOMBRE": "Santa Lucía",
+        "IDPROVINCIA": 2
+    },
+    {
+        "IDCANTON": 124,
+        "NOMBRE": "Simón Bolívar",
+        "IDPROVINCIA": 2
+    },
+    {
+        "IDCANTON": 125,
+        "NOMBRE": "Yaguachi",
+        "IDPROVINCIA": 2
+    }
+]
+}

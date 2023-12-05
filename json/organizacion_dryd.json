@@ -1,0 +1,18 @@
+[
+    {
+        "IDITEM": "RYD_ORG1",
+        "DESCRIPCION": "JUNTA DE RIEGO Y DRENAJE"
+    },
+    {
+        "IDITEM": "RYD_ORG2",
+        "DESCRIPCION": "ASOCIACIÓN"
+    },
+    {
+        "IDITEM": "RYD_ORG3",
+        "DESCRIPCION": "COOPERATIVA"
+    },
+    {
+        "IDITEM": "RYD_ORG4",
+        "DESCRIPCION": "OTRO"
+    }
+]

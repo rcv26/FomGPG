@@ -1,0 +1,22 @@
+[
+    {
+        "IDITEM": "1",
+        "DESCRIPCION": "CAPACITACIÓN"
+    },
+    {
+        "IDITEM": "2",
+        "DESCRIPCION": "TALLER"
+    },
+    {
+        "IDITEM": "3",
+        "DESCRIPCION": "REUNIÓN"
+    },
+    {
+        "IDITEM": "4",
+        "DESCRIPCION": "EVALUACIÓN"
+    },
+    {
+        "IDITEM": "5",
+        "DESCRIPCION": "INSPECCIÓN TÉCNICA"
+    }
+]

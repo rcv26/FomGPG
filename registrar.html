@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Registro de Usuarios</title>
+    <meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1.0, maximum-scale=3.0, minimum-scale=1.0">
+    <meta name="theme-color" content="#b1b1b1"/>
+    <link rel="stylesheet" href="css/all.css">
+    <link rel="shortcut icon" href="img/iconoPrefectura.png">
+    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="css/modal.css">    
+</head>
+<body>
+    <div id="overlay" style="display: none;"></div>
+    <div id="myModal" class="modal"  style="display: none;">
+        <div class="modal-header">
+            <span class="modal-title">Mensaje</span>
+            <button class="close" onclick="closeModal()">&times;</button>
+        </div>
+        <div class="modal-content">
+            <p id="modalMessage"></p>
+        </div>
+        <div class="modal-footer">
+            <button class="modal-btn-close" onclick="closeModal()">Cerrar</button>
+        </div>
+    </div>
+    <form class="formulario" id="registro">
+        <div class="contenedor">
+            <img src="img/logo_prefectura.png" alt="LOGO" height="281px" width="543px">
+            <h1>Regístrate</h1>
+
+            <label for="cedula">Cédula:</label>
+            <div class="input-contenedor">
+                <i class="fas fa-user icon"></i>
+                <input type="text" id="cedula" placeholder="Cédula">
+            </div>
+
+            <label for="correo">Correo:</label>
+            <div class="input-contenedor">
+                <i class="fas fa-envelope icon"></i>
+                <input type="text" id="correo" placeholder="Correo Electrónico">
+            </div>
+
+            <input type="submit" value="Regístrate" class="button">
+            <p>¿Ya tienes una cuenta? <a class="link" href="index.html">Iniciar Sesión</a></p>
+        </div>
+    </form>
+    <script src="js/registro.js"></script> 
+</body>
+</html>

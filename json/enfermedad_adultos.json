@@ -1,0 +1,28 @@
+[
+
+	{
+		"IDITEM": "CA",
+		"DESCRIPCION": "CÁNCER"
+	},
+	{
+		"IDITEM": "DI",
+		"DESCRIPCION": "DIABETES"
+	},
+	{
+		"IDITEM": "HI",
+		"DESCRIPCION": "HIPERTENSION"
+	},
+	{
+		"IDITEM": "EC",
+		"DESCRIPCION": "CORONARIA"
+	},
+	{
+		"IDITEM": "AR",
+		"DESCRIPCION": "ARTRITIS"
+	},
+	{
+		"IDITEM": "AL",
+		"DESCRIPCION": "ALZHEIMER"
+	}
+	
+]

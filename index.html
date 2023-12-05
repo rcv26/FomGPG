@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Prefectura del Guayas - SISTEMA PORTATIL DE INGRESO DE DATOS</title>
+    <meta name="viewport"
+        content="width=device-width, user-scalable=yes, initial-scale=1.0, maximum-scale=3.0, minimum-scale=1.0">
+    <meta name="theme-color" content="#b1b1b1" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="shortcut icon" href="img/iconoPrefectura.png">
+    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="css/modal.css">
+    <link rel="stylesheet" href="css/wait.css">
+</head>
+
+<body>
+    <!-- Modal de Espera -->
+    <div id="loadingModal" class="modal-wait">
+        <div class="modal-content-wait">
+            <div class="loader-wait"></div>
+            <p>Cargando...</p>
+        </div>
+    </div>
+    <div id="overlay" style="display: none;"></div>
+    <div id="myModal" class="modal" style="display: none;">
+        <div class="modal-header">
+            <span class="modal-title">Mensaje</span>
+            <button class="close" onclick="closeModal()">&times;</button>
+        </div>
+        <div class="modal-content">
+            <p id="modalMessage"></p>
+        </div>
+        <div class="modal-footer">
+            <button class="modal-btn-close" onclick="closeModal()">Cerrar</button>
+        </div>
+    </div>
+    <form class="formulario" id="login">
+        <div class="contenedor">
+            <img src="img/logo_prefectura.png" alt="LOGO" height="281px" width="543px"><br>
+            <h1>Login</h1>
+
+            <label for="cedula">Cedula:</label>
+            <div class="input-contenedor">
+                <i class="fas fa-key icon"></i>
+                <input type="text" id="cedula" placeholder="Cedula">
+            </div>
+
+            <label for="correo">Correo:</label>
+            <div class="input-contenedor">
+                <i class="fas fa-envelope icon"></i>
+                <input type="text" id="correo" placeholder="Correo Electrónico">
+            </div>
+
+            <input type="submit" value="Login" class="button">
+            <p><a class="link" href="registrar.html">Registrate</a></p>
+        </div>
+    </form>
+    <button id="installButton" style="display: none;">Instalar PWA</button>
+    <script src="/main.js"> </script>
+    <script src="/js/login.js"></script>
+    <script src="/js/wait.js"></script>
+</body>
+
+</html>

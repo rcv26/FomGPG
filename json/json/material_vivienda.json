@@ -1,0 +1,18 @@
+[
+	{
+		"IDITEM": "CA",
+		"DESCRIPCION": "CAÑA"
+	},
+	{
+		"IDITEM": "MA",
+		"DESCRIPCION": "MADERA"
+	},
+	{
+		"IDITEM": "CE",
+		"DESCRIPCION": "CEMENTO"
+	},
+	{
+		"IDITEM": "MI",
+		"DESCRIPCION": "MIXTA"
+	}
+]

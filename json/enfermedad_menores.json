@@ -1,0 +1,14 @@
+[
+	{
+		"IDITEM": "RP",
+		"DESCRIPCION": "RESPIRATORIAS"
+	},
+	{
+		"IDITEM": "DP",
+		"DESCRIPCION": "DE LA PIEL"
+	},
+	{
+		"IDITEM": "DI",
+		"DESCRIPCION": "ESTOMACALES"
+	}
+]

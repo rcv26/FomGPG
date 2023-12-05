@@ -1,0 +1,14 @@
+[
+	{
+		"IDITEM": "SI",
+		"DESCRIPCION": "SÍ, TODOS"
+	},
+	{
+		"IDITEM": "AL",
+		"DESCRIPCION": "ALGUNOS"
+	},
+	{
+		"IDITEM": "NO",
+		"DESCRIPCION": "NO"
+	}
+]

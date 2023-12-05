@@ -1,0 +1,18 @@
+[
+	{
+		"IDITEM": "NI",
+		"DESCRIPCION": "NINGUNA"
+	},
+	{
+		"IDITEM": "PC",
+		"DESCRIPCION": "EDUCACIÓN BÁSICA"
+	},
+	{
+		"IDITEM": "BA",
+		"DESCRIPCION": "BACHILLERATO"
+	},
+	{
+		"IDITEM": "PT",
+		"DESCRIPCION": "TERCER NIVEL"
+	}
+]

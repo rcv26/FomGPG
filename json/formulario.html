@@ -1,0 +1,931 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#b1b1b1" />
+    <title>Prefectura del Guayas -SISTEMA PORTATIL DE INGRESO DE DATOS</title>
+    <link rel="stylesheet" href="css/modal.css">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/formulario.css">    
+    <link rel="shortcut icon" href="img/iconoPrefectura.png">
+</head>
+
+<body>
+    <div id="overlay" style="display: none;"></div>
+    <div id="myModal" class="modal" style="display: none;">
+        <div class="modal-header">
+            <span class="modal-title">Mensaje</span>
+            <button class="close" onclick="closeModal()">&times;</button>
+        </div>
+        <div class="modal-content">
+            <p id="modalMessage"></p>
+        </div>
+        <div class="modal-footer">
+            <button class="modal-btn-close" onclick="closeModal()">Cerrar</button>
+        </div>
+    </div>
+
+
+    <div id="cabecera">
+        <div>
+            <img src="img/logo_prefectura.png" alt="LOGO" height="281px" width="543px"><br>
+            <h2>SISTEMA PORTATIL DE INGRESO DE DATOS</h2>
+            <h1>COORDINACION GENERAL DE DESARROLLO SOSTENIBLE</h1>
+        </div>
+    </div>
+
+    <button id="logoutButton">Cerrar Sesión</button>
+
+    <main>
+        <form class="formulario" id="miFormulario" name="miFormulario" method="POST">
+
+            <input type="hidden" id="state" name="state" value="SYN">
+
+            <input type="hidden" id="origin" name="origin" value="">
+
+            <!-- Grupo: Registrador -->
+            <div class="formulario_grupo">
+                <label for="registrador" class="formulario_label">Registrador</label>
+                <div class="formulario_grupo-input">
+                    <input type="text" class="formulario_input" id="registrador" name="registrador"
+                        placeholder="Nombres" disabled>
+                </div>
+            </div>
+
+
+            <!-- Grupo: Area Responsable-->
+            <div class="formulario_grupo">
+                <label for="area" class="formulario_label">Área Responsable del Servicio</label>
+                <div class="formulario_grupo-input">
+                    <select class="formulario_input" id="area" name="area">
+                        <option value="DEECO">(DEECO)-DIR.EQUIDAD EDUCACION CULTURAL Y OPORTUNIDADES</option>
+                        <option value="MZCV">(MZCV)-MANZANA DE CUIDADOS (Daule)</option>
+                        <option value="MZCV2">(MZCV)-MANZANA DE CUIDADOS (Guayaquil)</option>
+                        <option value="RURAL">D. RURAL - RIESGOS</option>
+                        <option value="TURISMO">TURISMO</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Grupo: Fecha de Hoy -->
+            <div class="formulario_grupo">
+                <label for="fecha-actual" class="formulario_label">Fecha</label>
+                <div class="formulario_grupo-input">
+                    <input type="text" class="formulario_input" name="fecha-actual" id="fecha-actual" readonly>
+                </div>
+            </div>
+
+            <div class="formulario_grupo">
+                <label for="cantonSelect1" class="formulario_label">Cantón</label>
+                <div class="formulario_grupo-input">
+                    <select class="formulario_input" name="cantonSelect1" id="cantonSelect1"
+                        data-name="Cantón"></select>
+                </div>
+            </div>
+
+            <div class="formulario_grupo">
+                <label for="parroquiaSelect1" class="formulario_label">Parroquia</label>
+                <div class="formulario_grupo-input">
+                    <select class="formulario_input" name="parroquiaSelect1" id="parroquiaSelect1"
+                        data-name="Parroquia"></select>
+                </div>
+            </div>
+
+            <div class="formulario_grupo">
+                <label for="recinto" class="formulario_label">Recinto</label>
+                <div class="formulario_grupo-input">
+                    <input type="text" id="recinto" name="recinto" class="formulario_input">
+                </div>
+            </div>
+
+            <!-- Grupo: tipo identificacion -->
+            <div class="formulario_grupo">
+                <div class="formulario_grupo-input">
+                    <label for="tipoidentificacion" class="formulario_label">ID</label>
+                    <select class="formulario_input" id="tipoidentificacion" name="tipoidentificacion" data-name="ID">
+                        <option value="CED">CEDULA</option>
+                        <option value="PAS">PASAPORTE</option>
+                        <option value="OTROS">OTROS DOC</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Grupo: Numero de Documento -->
+            <div class="formulario_grupo">
+                <label for="numero" class="formulario_label">Num. doc</label>
+                <div class="formulario_grupo-input">
+                    <input type="tel" class="formulario_input" id="numero" name="numero" data-name="Num. doc"
+                        maxlength="10">
+                </div>
+            </div>
+
+            <!-- Grupo: Fecha Nacimiento -->
+            <div class="formulario_grupo">
+                <label for="fecha-nacimiento" class="formulario_label">Fecha de Nacimiento</label>
+                <div class="formulario_grupo-input">
+                    <input type="date" class="formulario_input" name="fecha-nacimiento" id="fecha-nacimiento"
+                        data-name="Fecha de Nacimiento" onfocusout="calcularEdad()">
+                </div>
+            </div>
+
+            <!-- Grupo: Edad -->
+            <div class="formulario_grupo">
+                <label for="edad" class="formulario_label">Edad</label>
+                <div class="formulario_grupo-input">
+                    <input type="text" class="formulario_input" name="edad" id="edad" data-name="Edad" readonly>
+                </div>
+            </div>
+
+            <!-- Grupo: tipo de beneficiario -->
+            <div class="formulario_grupo">
+                <label class="formulario_label">Tipo Beneficiario</label><br>
+                <input type="radio" id="Principal" name="beneficiario" value="Principal" data-name="Tipo Beneficiario">
+                <label for="Principal">Principal</label>
+                <input type="radio" id="Dependiente" name="beneficiario" value="Dependiente"
+                    data-name="Tipo Beneficiario">
+                <label for="Dependiente">Dependiente</label><br>
+            </div>
+
+            <!-- Grupo: Sexo -->
+            <div class="formulario_grupo">
+                <label class="formulario_label">Sexo de Nacimiento</label><br>
+                <input type="radio" id="Masculino" name="sexo" value="M" data-name="Sexo de Nacimiento">
+                <label for="Masculino">Masculino</label>
+                <input type="radio" id="Femenino" name="sexo" value="F" data-name="Sexo de Nacimiento">
+                <label for="Femenino">Femenino</label><br>
+            </div>
+
+            <!-- Grupo: Nombre -->
+            <div class="formulario_grupo">
+                <label for="nombre" class="formulario_label">Nombres</label>
+                <div class="formulario_grupo-input">
+                    <input type="text" class="formulario_input" name="nombre" id="nombre" data-name="Nombres"
+                        placeholder="Nombres">
+                </div>
+            </div>
+
+            <!-- Grupo: Apellido -->
+            <div class="formulario_grupo">
+                <label for="apellido" class="formulario_label">Apellidos</label>
+                <div class="formulario_grupo-input">
+                    <input type="text" class="formulario_input" name="apellido" id="apellido" data-name="Apellidos"
+                        placeholder="Apellidos">
+                </div>
+            </div>
+
+            <!-- Grupo: Estado Civil -->
+            <div class="formulario_grupo">
+                <div class="formulario_grupo-input">
+                    <label for="estadocivil" class="formulario_label">Estado Civil</label>
+                    <select class="formulario_input" id="estadocivil" name="estadocivil" data-name="Estado Civil">
+                        <option value="NA">--Seleccionar--</option>
+                        <option value="SOLTERO">Soltero</option>
+                        <option value="CASADO">Casado</option>
+                        <option value="DIVORCIADO">Divorciado</option>
+                        <option value="VIUDO">Viudo</option>
+                        <option value="UNION DE HECHO">Union de Hecho</option>
+                    </select>
+                </div>
+            </div>
+            <br>
+
+
+            <!-- pestañas -->
+            <div class="grid-container">
+                <div class="tabs">
+                    <div class="tab-button" data-target="tab1" onclick="openTab('tab1'); markActiveTab('tab1')">Datos de
+                        Localización, Comunicación, Conectividad y Vivienda</div>
+                    <div class="tab-button" data-target="tab2" onclick="openTab('tab2'); markActiveTab('tab2')">Datos
+                        Sociales</div>
+                    <div class="tab-button" id="tab3Button" data-target="tab3"
+                        onclick="openTab('tab3'); markActiveTab('tab3')">Servicios</div>
+                    <div class="tab-button" id="tab4Button" data-target="tab4"
+                        onclick="openTab('tab4'); markActiveTab('tab4')" style="display: none">Registro</div>
+                    <div class="tab-button" id="tab5Button" data-target="tab5"
+                        onclick="openTab('tab5'); markActiveTab('tab5')" style="display: none">Datos Personales</div>
+                </div>
+                <div class="tab-button" id="tab6Button" data-target="tab6"
+                        onclick="openTab('tab6'); markActiveTab('tab6')" style="display: none">Información Técnica</div>
+
+            <!-- pestañas 1 -->
+                <div class="tab-content" id="tab1" style="display: none">
+
+                    <h2>Localización</h2>
+                    <div class="formulario_grupo">
+                        <label for="cantonSelect2" class="formulario_label">Cantón</label>
+                        <div class="formulario_grupo-input">
+                            <select class="formulario_input" name="cantonSelect2" id="cantonSelect2"
+                                data-container="tab1" data-name="Cantón"></select>
+
+                            <div class="formulario_grupo">
+                                <label for="parroquiaSelect2" class="formulario_label">Parroquia</label>
+                                <div class="formulario_grupo-input">
+                                    <select class="formulario_input" name="parroquiaSelect2" id="parroquiaSelect2"
+                                        data-container="tab1" data-name="Parroquia"></select>
+                                </div>
+                            </div>
+
+                            <div class="formulario_grupo">
+                                <label for="direccion" class="formulario_label">Direccion</label>
+                                <div class="formulario_grupo-input">
+                                    <input type="text" name="direccion" id="direccion" class="formulario_input"
+                                        data-container="tab1" data-name="Direccion">
+                                </div>
+                            </div><br>
+
+                            <div class="formulario_grupo">
+                                <label for="referencia" class="formulario_label">Referencia</label>
+                                <div class="formulario_grupo-input">
+                                    <input type="text" name="referencia" id="referencia" class="formulario_input"
+                                        data-name="Referencia" data-container="tab1">
+                                </div>
+                            </div><br>
+
+                            <h2>Datos de Contacto</h2>
+                            <!-- Grupo: Telefono-->
+                            <div class="formulario_grupo">
+                                <label for="telefono" class="formulario_label">Teléfono</label>
+                                <div class="formulario_grupo-input">
+                                    <input type="tel" name="telefono" id="telefono" class="formulario_input"
+                                        maxlength="7" data-container="tab1">
+                                </div>
+                            </div>
+
+                            <!-- Grupo: Celular-->
+                            <div class="formulario_grupo">
+                                <label for="celular" class="formulario_label">Celular</label>
+                                <div class="formulario_grupo-input">
+                                    <input type="tel" name="celular" id="celular" class="formulario_input"
+                                        maxlength="10" data-name="Celular" data-container="tab1">
+                                </div>
+                            </div>
+
+                            <div class="formulario_grupo">
+                                <label for="operadora" class="formulario_label">Operadora</label>
+                                <div class="formulario_grupo-input">
+                                    <select class="formulario_input" id="operadora" name="operadora"
+                                        data-container="tab1" data-name="Operadora">
+                                        <option value="NA">--Seleccionar--</option>
+                                        <option value="MOV">Movistar</option>
+                                        <option value="CLR">Claro</option>
+                                        <option value="TWT">Tuenti</option>
+                                        <option value="CNT">CNT</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <!-- Grupo: Correo Electrónico -->
+                            <div class="formulario_grupo">
+                                <label for="correoelectronico" class="formulario_label">Correo Electrónico</label>
+                                <div class="formulario_grupo-input">
+                                    <input type="email" class="formulario_input" id="correoelectronico"
+                                        name="correoelectronico" data-name="Correo Electrónico"
+                                        placeholder="correo@correo.com" data-container="tab1">
+                                </div>
+                            </div>
+
+                            <h2>Datos de Comunicación y Conectividad</h2>
+
+                            <div class="formulario_grupo">
+                                <label for="select1" class="formulario_label">¿Su Hogar cuenta con Internet?</label>
+                                <div class="formulario_grupo-input">
+                                    <select class="formulario_input" id="select1" name="select1"
+                                        data-name="¿Su Hogar cuenta con Internet?" data-container="tab1"></select>
+                                </div>
+                            </div>
+
+                            <h2>Datos de Vivienda de la familia</h2>
+
+                            <div class="formulario_grupo">
+                                <label for="tipovivienda" class="formulario_label">¿La vivienda donde habita
+                                    es....?</label>
+                                <div class="formulario_grupo-input">
+                                    <select class="formulario_input" id="tipovivienda" name="tipovivienda"
+                                        data-name="¿La vivienda donde habita es....?" data-container="tab1"></select>
+                                </div>
+                            </div>
+
+                            <div class="formulario_grupo">
+                                <label for="materialvivienda" class="formulario_label">¿De qué material es su
+                                    vivienda?</label>
+                                <div class="formulario_grupo-input">
+                                    <select class="formulario_input" id="materialvivienda" name="materialvivienda"
+                                        data-name="¿De qué material es su vivienda?" data-container="tab1"></select>
+                                </div>
+                            </div>
+
+                            <div class="formulario_grupo">
+                                <label for="select2" class="formulario_label">¿La vivienda donde habita tiene servicio
+                                    de agua potable por tubería?</label>
+                                <div class="formulario_grupo-input">
+                                    <select class="formulario_input" id="select2" name="select2"
+                                        data-name="¿La vivienda donde habita tiene servicio de agua potable por tubería?"
+                                        data-container="tab1"></select>
+                                </div>
+                            </div>
+
+                            <div class="formulario_grupo">
+                                <label for="select3" class="formulario_label">¿La vivienda donde habita cuenta con luz
+                                    eléctrica?</label>
+                                <div class="formulario_grupo-input">
+                                    <select class="formulario_input" id="select3" name="select3"
+                                        data-name="¿La vivienda donde habita cuenta con luz eléctrica?"
+                                        data-container="tab1"></select>
+                                </div>
+                            </div>
+
+                            <div class="formulario_grupo">
+                                <label for="select4" class="formulario_label">¿La vivienda donde habita tiene servicio
+                                    de alcantarillado?</label>
+                                <div class="formulario_grupo-input">
+                                    <select class="formulario_input" id="select4" name="select4"
+                                        data-name="¿La vivienda donde habita tiene servicio de alcantarillado?"
+                                        data-container="tab1"></select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+
+            <!-- pestañas 2 -->
+                <div class="tab-content" id="tab2" style="display: none"><br>
+
+                    <!-- Grupo: Poblacion Objetivo -->
+                    <div class="formulario_grupo">
+                        <label class="formulario_label">Población Objetivo</label><br>
+                        <input type="radio" id="Cuidadora" name="tipopoblacion" data-container="tab2"
+                            data-name="Población Objetivo" value="Cuidadora">
+                        <label for="Cuidadora">Cuidadora</label>
+                        <input type="radio" id="Requiere" name="tipopoblacion" data-container="tab2"
+                            data-name="Población Objetivo" value="Requiere">
+                        <label for="Requiere">Requiere Cuidado</label>
+                    </div><br>
+
+
+                    <div class="formulario_grupo">
+                        <label for="tiempocuidado" class="formulario_label">¿Cuántas horas en promedio dedica al día a
+                            tareas domésticas y de cuidado no remunerado en su hogar?</label>
+                        <div class="formulario_grupo-input">
+                            <input type="tel" name="tiempocuidado" id="tiempocuidado" class="formulario_input"
+                                data-name="¿Cuántas horas en promedio dedica al día a tareas domésticas y de cuidado no remunerado en su hogar?"
+                                maxlength="2" data-container="tab2">
+                        </div>
+                    </div><br>
+
+                    <div class="formulario_grupo">
+                        <label class="formulario_label">¿Su hogar cuenta con lavadora?</label><br>
+                        <input type="radio" id="Si1" name="tienelavadora" data-container="tab2"
+                            data-name="¿Su hogar cuenta con lavadora?" value="Si">
+                        <label for="Si1">Si</label>
+                        <input type="radio" id="No1" name="tienelavadora" data-container="tab2"
+                            data-name="¿Su hogar cuenta con lavadora?" value="No">
+                        <label for="No1">No</label><br>
+                    </div><br>
+
+                    <div class="formulario_grupo">
+                        <label class="formulario_label">¿Es usted Jefa/Jefe de hogar?</label><br>
+                        <input type="radio" id="Si2" name="jefefamilia" data-container="tab2"
+                            data-name="¿Es usted Jefa/Jefe de hogar?" value="Si">
+                        <label for="Si2">Si</label>
+                        <input type="radio" id="No2" name="jefefamilia" data-container="tab2"
+                            data-name="¿Es usted Jefa/Jefe de hogar?" value="No">
+                        <label for="No2">No</label><br>
+                    </div>
+
+                    <div class="formulario_grupo">
+                        <label class="formulario_label">¿Es ama de casa?</label><br>
+                        <input type="radio" id="Si3" name="amacasa" data-container="tab2" data-name="¿Es ama de casa?"
+                            value="Si">
+                        <label for="Si3">Si</label>
+                        <input type="radio" id="No3" name="amacasa" data-container="tab2" data-name="¿Es ama de casa?"
+                            value="No">
+                        <label for="No3">No</label><br>
+                    </div>
+
+                    <div class="formulario_grupo">
+                        <label for="discapacidad" class="formulario_label">¿Tiene usted alguna discapacidad?</label>
+                        <div class="formulario_grupo-input">
+                            <select class="formulario_input" id="discapacidad" name="discapacidad"
+                                data-container="tab2" data-name="Discapacidad?"></select>
+                        </div>
+                    </div>
+
+                    <div class="formulario_grupo">
+                        <label for="enfermedadcronica" class="formulario_label">¿Padece alguna enfermedad
+                            crónica?</label>
+                        <div class="formulario_grupo-input">
+                            <select class="formulario_input" id="enfermedadcronica" name="enfermedadcronica"
+                                data-container="tab2" data-name="Enfermedad crónica?"></select>
+                        </div>
+                    </div>
+
+                    <h2>Educación y Empleo</h2>
+
+                    <!-- Grupo: PREGUNTA -->
+                    <div class="formulario_grupo">
+                        <label for="nivel_educativo" class="formulario_label">Máximo nivel educativo alcanzado</label>
+                        <div class="formulario_grupo-input">
+                            <select class="formulario_input" id="nivel_educativo" name="niveleducativo"
+                                data-name="Máximo nivel educativo alcanzado" data-container="tab2"></select>
+                        </div>
+                    </div>
+
+                    <!-- Grupo: PREGUNTA -->
+                    <div class="formulario_grupo">
+                        <label for="situacionlaboral" class="formulario_label">Situación laboral</label>
+                        <div class="formulario_grupo-input">
+                            <select class="formulario_input" id="situacionlaboral" name="situacionlaboral"
+                                data-name="Situación laboral" data-container="tab2"></select>
+                        </div>
+                    </div>
+
+                    <h2>Datos Sociales del hogar</h2>
+                    <h3>Menores de Edad</h3>
+
+                    <div class="formulario_grupo">
+                        <label for="select5" class="formulario_label">¿Hay niños menores de 18 años que habitan en el
+                            hogar?</label>
+                        <div class="formulario_grupo-input">
+                            <select class="formulario_input" id="select5" name="select5"
+                                data-name="¿Hay niños menores de 18 años que habitan en el hogar?"
+                                data-container="tab2"></select>
+                        </div>
+                    </div>
+
+                    <div class="formulario_grupo">
+                        <label for="nummenores18anios" class="formulario_label">¿Cuántos niños menores de 18 años
+                            habitan en el hogar?</label>
+                        <div class="formulario_grupo-input">
+                            <select class="formulario_input" id="nummenores18anios" name="nummenores18anios"
+                                data-name="¿Cuántos niños menores de 18 años habitan en el hogar?"
+                                data-container="tab2">
+                                <option value="0">--Seleccionar--</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                            </select>
+                        </div>
+                    </div><br>
+
+
+                    <div class="formulario_grupo">
+                        <label for="afirmacion" class="formulario_label">¿Los niños mayores de 5 años están
+                            estudiando?</label>
+                        <div class="formulario_grupo-input">
+                            <select class="formulario_input" id="afirmacion" name="afirmacion"
+                                data-name="¿Los niños mayores de 5 años están estudiando?"
+                                data-container="tab2"></select>
+                        </div>
+                    </div>
+
+                    <div class="formulario_grupo">
+                        <label for="select6" class="formulario_label">¿Los niños que viven en el hogar se enferman
+                            regularmente durante el mes?</label>
+                        <div class="formulario_grupo-input">
+                            <select class="formulario_input" id="select6" name="select6"
+                                data-name="¿Los niños que viven en el hogar se enferman regularmente durante el mes?"
+                                data-container="tab2"></select>
+                        </div>
+                    </div>
+
+                    <div class="formulario_grupo">
+                        <label for="enfermedadmenores" class="formulario_label">¿De qué se enferman?</label>
+                        <div class="formulario_grupo-input">
+                            <select class="formulario_input" id="enfermedadmenores" name="enfermedadmenores"
+                                data-name="¿De qué se enferman?" data-container="tab2"></select>
+                        </div>
+                    </div>
+
+                    <h3>Entorno</h3>
+                    <div class="formulario_grupo">
+                        <label for="ctahombres" class="formulario_label">¿Cuántos hombres viven en el hogar (contando
+                            niños)?</label>
+                        <div class="formulario_grupo-input">
+                            <select class="formulario_input" id="ctahombres" name="ctahombres"
+                                data-name="¿Cuántos hombres viven en el hogar (contando niños)?" data-container="tab2">
+                                <option value="NA">--Seleccionar--</option>
+                                <option value="0">0</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                            </select>
+                        </div>
+                    </div><br>
+
+                    <div class="formulario_grupo">
+                        <label for="ctamujeres" class="formulario_label">¿Cuántas mujeres viven en el hogar (contando
+                            niñas)?</label>
+                        <div class="formulario_grupo-input">
+                            <select class="formulario_input" id="ctamujeres" name="ctamujeres"
+                                data-name="¿Cuántas mujeres viven en el hogar (contando niñas)?" data-container="tab2">
+                                <option value="NA">--Seleccionar--</option>
+                                <option value="0">0</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                            </select>
+                        </div>
+                    </div><br>
+
+                    <h3>Embarazo y Controles</h3>
+
+                    <div class="formulario_grupo">
+                        <label for="select7" class="formulario_label">¿Hay mujeres que están embarazadas y que viven
+                            con usted en el hogar?</label>
+                        <div class="formulario_grupo-input">
+                            <select class="formulario_input" id="select7" name="select7"
+                                data-name="¿Hay mujeres que están embarazadas y que viven con usted en el hogar?"
+                                data-container="tab2"></select>
+                        </div>
+                    </div>
+
+                    <div class="formulario_grupo">
+                        <label for="select8" class="formulario_label">¿Las mujeres que estan embarazadas asisten a
+                            chequeos de embarazo?</label>
+                        <div class="formulario_grupo-input">
+                            <select class="formulario_input" id="select8" name="select8"
+                                data-name="¿Las mujeres que estan embarazadas asisten a chequeos de embarazo?"
+                                data-container="tab2"></select>
+                        </div>
+                    </div>
+
+                    <div class="formulario_grupo">
+                        <label for="select9" class="formulario_label">¿Hay mujeres que estan embarazadas y tienen menos
+                            de 18 años viviendo en su hogar?</label>
+                        <div class="formulario_grupo-input">
+                            <select class="formulario_input" id="select9" name="select9"
+                                data-name="¿Hay mujeres que estan embarazadas y tienen menos de 18 años viviendo en su hogar?"
+                                data-container="tab2"></select>
+                        </div>
+                    </div>
+
+                    <h3>Adultos mayores y Enfermedades</h3>
+
+                    <div class="formulario_grupo">
+                        <label for="select10" class="formulario_label">¿Hay personas con discapacidad viviendo en su
+                            hogar?</label>
+                        <div class="formulario_grupo-input">
+                            <select class="formulario_input" id="select10" name="select10"
+                                data-name="¿Hay personas con discapacidad viviendo en su hogar?"
+                                data-container="tab2"></select>
+                        </div>
+                    </div>
+
+                    <div class="formulario_grupo">
+                        <label for="discapacidad" class="formulario_label">¿Qué tipo de discapacidad tiene?</label>
+                        <div class="formulario_grupo-input">
+                            <select class="formulario_input" id="discapacidad2" name="discapacidad2"
+                                data-name="¿Qué tipo de discapacidad tiene?" data-container="tab2"></select>
+                        </div>
+                    </div>
+
+                    <div class="formulario_grupo">
+                        <label for="select11" class="formulario_label">¿Hay mayores de 65 años viviendo en su
+                            hogar?</label>
+                        <div class="formulario_grupo-input">
+                            <select class="formulario_input" id="select11" name="select11"
+                                data-name="¿Hay mayores de 65 años viviendo en su hogar?"
+                                data-container="tab2"></select>
+                        </div>
+                    </div>
+
+                    <div class="formulario_grupo">
+                        <label for="select12" class="formulario_label">¿Hay personas con enfermedades crónicas viviendo
+                            en su hogar?</label>
+                        <div class="formulario_grupo-input">
+                            <select class="formulario_input" id="select12" name="select12" data-container="tab2"
+                                data-name="¿Hay personas con enfermedades crónicas como hipertensión, diabetes o enfermedades coronarias viviendo en su hogar?"></select>
+                        </div>
+                    </div>
+
+                    <div class="formulario_grupo">
+                        <label for="enfermedadcronica2" class="formulario_label">¿Qué enfermedad tiene?</label>
+                        <div class="formulario_grupo-input">
+                            <select class="formulario_input" id="enfermedadcronica2" name="enfermedadcronica2"
+                                data-name="¿Qué enfermedad tiene?" data-container="tab2"></select>
+                        </div>
+                    </div>
+                    
+                </div>
+
+            <!-- pestañas 3 -->
+                <div class="tab-content" id="tab3" style="display: none">
+
+                    <h2>Cuidando Vidas</h2>
+
+                    <div class="formulario_grupo">
+                        <label for="nombre" class="formulario_label">Salud y Bienestar</label>
+
+                        <div class="formulario_grupo-input">
+                            <input type="checkbox" id="veterinaria" name="intereses" value="Veterinaria">
+                            <label for="veterinaria">Veterinaria</label><br>
+                            <input type="checkbox" id="medicina" name="intereses" value="Medicina">
+                            <label for="medicina">Medicina General</label><br>
+                            <input type="checkbox" id="odontologia" name="intereses" value="Odontologia">
+                            <label for="odontologia">Odontologia</label><br>
+                            <input type="checkbox" id="geriatria" name="intereses" value="Geriatria">
+                            <label for="geriatria">Geriatria</label><br>
+                            <input type="checkbox" id="obstetricia" name="intereses" value="Obstetricia">
+                            <label for="obstetricia">Obstetricia</label><br>
+                            <input type="checkbox" id="pediatria" name="intereses" value="Pediatria">
+                            <label for="pediatria">Pediatria</label><br>
+                            <input type="checkbox" id="fisioterapia" name="intereses" value="Fisioterapia">
+                            <label for="fisioterapia">Fisioterapia</label><br>
+                            <input type="checkbox" id="oftalmologia" name="intereses" value="Oftalmologia">
+                            <label for="oftalmologia">Oftalmologia</label><br>
+                            <input type="checkbox" id="bailoterapia64" name="intereses" value="bailoterapia64">
+                            <label for="bailoterapia64">Bailoterapia &#60&#61 64 años</label><br>
+                            <input type="checkbox" id="peluqueria" name="intereses" value="Peluqueria/SPA">
+                            <label for="peluqueria">Peluqueria/SPA</label><br>
+                            <input type="checkbox" id="lavanderia" name="intereses" value="Lavanderia">
+                            <label for="lavanderia">Lavanderia</label><br>
+                            <input type="checkbox" id="asesoria" name="intereses" value="Asesoria">
+                            <label for="asesoria">Asesoria Legal</label><br>
+                            <input type="checkbox" id="psicologia" name="intereses" value="Psicologia">
+                            <label for="psicologia">Psicologia</label><br>
+                            <input type="checkbox" id="defensa" name="intereses" value="Defensa">
+                            <label for="defensa">Defensa Personal</label><br>
+                            <input type="checkbox" id="musica" name="intereses" value="Musica">
+                            <label for="musica">Taller de Musica</label><br>
+                            <input type="checkbox" id="artes" name="intereses" value="Artes">
+                            <label for="artes">Taller de Artes Escenicas</label><br>
+                        </div>
+                    </div><br>
+
+                    <div class="formulario_grupo">
+                        <label for="nombre" class="formulario_label">Educacion/Formación</label>
+                        <div class="formulario_grupo-input">
+                            <input type="checkbox" id="Cuidadanos" name="intereses" value="Cuidadanos">
+                            <label for="Cuidadanos">Ciudadanos Digitales</label><br>
+                            <input type="checkbox" id="Becas" name="intereses" value="Becas">
+                            <label for="Becas">Becas Estudiantiles</label><br>
+                            <input type="checkbox" id="Charla" name="intereses" value="Liderazgo">
+                            <label for="Charla">Charla de Liderazgo y Empoderamiento</label><br>
+                            <input type="checkbox" id="SECAP" name="intereses" value="SECAP">
+                            <label for="SECAP">Certificados SECAP</label><br>
+                        </div>
+                    </div><br>
+
+                    <div class="formulario_grupo">
+                        <label for="nombre" class="formulario_label">Cuidado</label>
+                        <div class="formulario_grupo-input">
+                            <input type="checkbox" id="Guarderia" name="intereses" value="Guarderia">
+                            <label for="Guarderia">Guarderia</label><br>
+                            <input type="checkbox" id="lectura" name="intereses" value="lectura">
+                            <label for="lectura">Animacion a la lectura</label><br>
+                            <input type="checkbox" id="bailoterapia65" name="intereses" value="bailoterapia65">
+                            <label for="bailoterapia65">Bailoterapia &#62 65 años </label><br>
+                        </div>
+                    </div><br>
+
+                    <div class="formulario_grupo">
+                        <label for="nombre" class="formulario_label">Emprendimiento</label>
+                        <div class="formulario_grupo-input">
+                            <input type="checkbox" id="Manualidades" name="intereses" value="Manualidades">
+                            <label for="Manualidades">Manualidades</label><br>
+                            <input type="checkbox" id="Bisuteria" name="intereses" value="Bisuteria">
+                            <label for="Bisuteria">Bisuteria</label><br>
+                            <input type="checkbox" id="Huertos" name="intereses" value="Huertos">
+                            <label for="Huertos">Huertos Familiares</label><br>
+                            <input type="checkbox" id="Gastronomia" name="intereses" value="Gastronomia">
+                            <label for="Gastronomia">Gastronomia</label><br>
+                            <input type="checkbox" id="Belleza" name="intereses" value="Belleza">
+                            <label for="Belleza">Belleza</label><br>
+                            <input type="checkbox" id="Elaboracion" name="intereses" value="Elaboracion">
+                            <label for="Elaboracion">Elaboracion de Quimico</label><br>
+                            <input type="checkbox" id="Capacitacion" name="intereses" value="Capacitacion">
+                            <label for="Capacitacion">Capacitacion Agroindustrial</label><br>
+                        </div>
+                    </div><br>
+
+                    <input type="text" id="campoInvisible" style="display:none;">
+
+                </div>
+
+            <!-- pestañas 4 -->
+                <div class="tab-content" id="tab4" style="display: none">
+
+                    <h2>Manzana de Cuidado</h2>
+
+                    <h3>Servicios</h3>
+
+                    <div class="formulario_grupo">
+                        <label for="nombre" class="formulario_label">Salud y Bienestar</label>
+
+                        <div class="formulario_grupo-input">
+                            <input type="checkbox" id="veterinaria2" name="intereses2" value="Veterinaria">
+                            <label for="veterinaria2">Veterinaria</label><br>
+                            <input type="checkbox" id="medicina2" name="intereses2" value="Medicina">
+                            <label for="medicina2">Medicina General</label><br>
+                            <input type="checkbox" id="odontologia2" name="intereses2" value="Odontologia">
+                            <label for="odontologia2">Odontologia</label><br>
+                            <input type="checkbox" id="geriatria2" name="intereses2" value="Geriatria">
+                            <label for="geriatria2">Geriatria</label><br>
+                            <input type="checkbox" id="obstetricia2" name="intereses2" value="Obstetricia">
+                            <label for="obstetricia2">Obstetricia</label><br>
+                            <input type="checkbox" id="pediatria2" name="intereses2" value="Pediatria">
+                            <label for="pediatria2">Pediatria</label><br>
+                            <input type="checkbox" id="fisioterapia2" name="intereses2" value="Fisioterapia">
+                            <label for="fisioterapia2">Fisioterapia</label><br>
+                            <input type="checkbox" id="oftalmologia2" name="intereses2" value="Oftalmologia">
+                            <label for="oftalmologia2">Oftalmologia</label><br>
+                            <input type="checkbox" id="bailoterapia642" name="intereses2" value="bailoterapia64">
+                            <label for="bailoterapia642">Bailoterapia &#60&#61 64 años</label><br>
+                            <input type="checkbox" id="peluqueria2" name="intereses2" value="Peluqueria/SPA">
+                            <label for="peluqueria2">Peluqueria/SPA</label><br>
+                            <input type="checkbox" id="lavanderia2" name="intereses2" value="Lavanderia">
+                            <label for="lavanderia2">Lavanderia</label><br>
+                            <input type="checkbox" id="asesoria2" name="intereses2" value="Asesoria">
+                            <label for="asesoria2">Asesoria Legal</label><br>
+                            <input type="checkbox" id="psicologia2" name="intereses2" value="Psicologia">
+                            <label for="psicologia2">Psicologia</label><br>
+                            <input type="checkbox" id="defensa2" name="intereses2" value="Defensa">
+                            <label for="defensa2">Defensa Personal</label><br>
+                            <input type="checkbox" id="musica2" name="intereses2" value="Musica">
+                            <label for="musica2">Taller de Musica</label><br>
+                            <input type="checkbox" id="artes2" name="intereses2" value="Artes">
+                            <label for="artes2">Taller de Artes Escenicas</label><br>
+                        </div>
+                    </div><br>
+
+                    <div class="formulario_grupo">
+                        <label for="nombre" class="formulario_label">Cuidado</label>
+                        <div class="formulario_grupo-input">
+                            <input type="checkbox" id="Guarderia2" name="intereses2" value="Guarderia">
+                            <label for="Guarderia2">Guarderia</label><br>
+                            <input type="checkbox" id="lectura2" name="intereses2" value="lectura">
+                            <label for="lectura2">Animacion a la lectura</label><br>
+                            <input type="checkbox" id="bailoterapia652" name="intereses2" value="bailoterapia65">
+                            <label for="bailoterapia652">Bailoterapia &#62 65 años </label><br>
+                        </div>
+                    </div><br>
+
+                    <h3>Cursos</h3>
+
+                    <div class="formulario_grupo">
+                        <label for="nombre" class="formulario_label">Emprendimiento</label>
+                        <div class="formulario_grupo-input">
+                            <input type="checkbox" id="Manualidades2" name="intereses2" value="Manualidades">
+                            <label for="Manualidades2">Manualidades</label><br>
+                            <input type="checkbox" id="Bisuteria2" name="intereses2" value="Bisuteria">
+                            <label for="Bisuteria2">Bisuteria</label><br>
+                            <input type="checkbox" id="Huertos2" name="intereses2" value="Huertos">
+                            <label for="Huertos2">Huertos Familiares</label><br>
+                            <input type="checkbox" id="Gastronomia2" name="intereses2" value="Gastronomia">
+                            <label for="Gastronomia2">Gastronomia</label><br>
+                            <input type="checkbox" id="Belleza2" name="intereses2" value="Belleza">
+                            <label for="Belleza2">Belleza</label><br>
+                            <input type="checkbox" id="Elaboracion2" name="intereses2" value="Elaboracion">
+                            <label for="Elaboracion2">Elaboracion de Quimico</label><br>
+                            <input type="checkbox" id="Capacitacion2" name="intereses2" value="Capacitacion">
+                            <label for="Capacitacion2">Capacitacion Agricola</label><br>
+                        </div>
+                    </div><br>
+
+                    <div class="formulario_grupo">
+                        <label for="nombre" class="formulario_label">Educacion/Formación</label>
+                        <div class="formulario_grupo-input">
+                            <input type="checkbox" id="Cuidadanos2" name="intereses2" value="Ciudadanos">
+                            <label for="Cuidadanos2">Ciudadanos Digitales</label><br>
+                            <input type="checkbox" id="Bachillerato2" name="intereses2" value="Bachillerato">
+                            <label for="Bachillerato2">Bachillerato Acelerado</label><br>
+                        </div>
+                    </div><br>
+                </div>
+
+            <!-- pestañas 5 -->
+            <div class="tab-content" id="tab5" style="display: none"> <br>
+                <div class="formulario_grupo">
+                    <label for="asociacion" class="formulario_label">Asociación</label>
+                    <div class="formulario_grupo-input">
+                        <input type="text" name="asociacion" id="asociacion" class="formulario_input" data-name="asociacion" data-container="tab5" >
+                    </div>
+                </div><br>
+            
+                <div class="formulario_grupo">
+                    <label for="cargo" class="formulario_label">Cargo</label>
+                    <div class="formulario_grupo-input">
+                        <input type="text" name="cargo" id="cargo" class="formulario_input" data-name="cargo" data-container="tab5" >
+                    </div>
+                </div><br>
+            
+                <div class="formulario_grupo">
+                    <label for="evento" class="formulario_label">Nombre del Evento</label>
+                    <div class="formulario_grupo-input">
+                        <input type="text" name="evento" id="evento" class="formulario_input" data-name="evento" data-container="tab5" >
+                    </div>
+                </div><br>
+            
+                <div class="formulario_grupo" >
+                    <label for="tipoevento" class="formulario_label">Tipo de Evento</label>
+                    <div class="formulario_grupo-input">
+                        <select class="formulario_input" id="tipoevento" name="tipoevento" data-name="tipoevento" data-container="tab5" >
+                        </select>
+                    </div>
+                </div><br>
+            
+            </div>
+
+            <div class="tab-content" id="tab6" style="display: none"> <br>
+
+                <div class="formulario_grupo">
+                    <label for="nomevento" class="formulario_label">Nombre del Evento</label>
+                    <div class="formulario_grupo-input">
+                        <input type="text" name="nomevento" id="nomevento" class="formulario_input" data-name="Nombre del Evento" data-container="tab6" >
+                    </div>
+                </div><br>
+
+                <div class="formulario_grupo">
+                    <label for="empresa" class="formulario_label">Nombre empresa/Organización</label>
+                    <div class="formulario_grupo-input">
+                        <input type="text" name="empresa" id="empresa" class="formulario_input" data-name="Nombre empresa/Organización" data-container="tab6" >
+                    </div>
+                </div><br>
+            
+                <div class="formulario_grupo">
+                    <label for="emprendimiento" class="formulario_label">¿Tienen algún emprendimiento?</label>
+                    <div class="formulario_grupo-input">
+                        <select class="formulario_input" name="emprendimiento" id="emprendimiento" class="formulario_input" data-name="¿Tienen algún emprendimiento?" data-container="tab6" >
+                        </select>
+                        </div>
+                </div><br>
+
+                <div class="formulario_grupo">
+                    <label for="quemprendimiento" class="formulario_label">¿Qué emprendimiento?</label>
+                    <div class="formulario_grupo-input">
+                        <input type="text" name="quemprendimiento" id="quemprendimiento" class="formulario_input" data-name="¿Qué emprendimiento?" data-container="tab6" >
+                    </div>
+                </div><br>
+            
+           
+                <div class="formulario_grupo" >
+                    <label for="tiempoempre" class="formulario_label">¿Qué tiempo tienen con ese emprendimiento? (# años)</label>
+                    <div class="formulario_grupo-input">
+                        <select class="formulario_input" id="tiempoempre" name="tiempoempre" data-name="¿Qué tiempo tienen con ese emprendimiento?" data-container="tab6" >
+                        </select>
+                    </div>
+                </div><br>
+
+                <div class="formulario_grupo">
+                    <label for="sectorturistico" class="formulario_label">¿Le interesa trabajar en el sector turístico?</label>
+                    <div class="formulario_grupo-input">
+                        <select class="formulario_input" name="sectorturistico" id="sectorturistico" class="formulario_input" data-name="¿Le interesa trabajar en el sector turístico?" data-container="tab6" >
+                        </select>
+                    </div>
+                </div><br>
+
+                
+            
+            </div>
+
+
+                <div class="formulario_grupo formulario_grupo-btn-enviar" id="btnEnviarContainer" >
+                    <button id="btnenviar" class="formulario_btn">Enviar Formulario</button>
+                    </p><br>
+                </div>
+        </form>
+
+        <!-- <div>
+            <button id="prev" onclick="prevStep()">Prev</button>
+            <button id="next" onclick="nextStep()">Next</button>
+          </div> -->
+
+        <div class="formulario_grupo formulario_grupo-btn-enviar">
+            <button id="syncButton">Sincronizar</button>
+        </div>
+
+    </main>
+    
+    <script type="module" src="js/wait.js"></script>
+    <script src="js/formulario.js"></script>
+    <script src="js/logout.js"></script>
+    <script src="webservice.js"></script>
+    <script src="js/jquery-3.6.0.min.js"></script>
+
+</body>
+
+</html>

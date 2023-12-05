@@ -1,0 +1,74 @@
+{    "name": "Prefectura del Guayas -SISTEMA PORTATIL DE INGRESO DE DATOS",
+    "short_name": "Guayas",
+    "description": "Una Progressive Web App de ejemplo",
+    "start_url": "/index.html",
+    "display": "standalone",
+    "background_color": "#b1b1b1",
+    "theme_color": "#b1b1b1",
+    "orientation": "portrait-primary",
+    "icons": [
+        {
+            "src": "/img/icons/iconoPrefectura72x72.png",
+            "type": "image/png",
+            "sizes": "72x72"
+        },
+        {
+            "src": "/img/icons/iconoPrefectura96x96.png",
+            "type": "image/png",
+            "sizes": "96x96"
+        },
+        {
+            "src": "/img/icons/iconoPrefectura128x128.png",
+            "type": "image/png",
+            "sizes": "128x128"
+        },
+        {
+            "src": "/img/icons/iconoPrefectura144x144.png",
+            "type": "image/png",
+            "sizes": "144x144"
+        },
+        {
+            "src": "/img/icons/iconoPrefectura152x152.png",
+            "type": "image/png",
+            "sizes": "152x152"
+        },
+        {
+            "src": "/img/icons/iconoPrefectura192x192.png",
+            "type": "image/png",
+            "sizes": "192x192"
+        },
+        {
+            "src": "/img/icons/iconoPrefectura384x384.png",
+            "type": "image/png",
+            "sizes": "384x384"
+        },
+        {
+            "src": "/img/icons/iconoPrefectura512x512.png",
+            "type": "image/png",
+            "sizes": "512x512"
+        },
+        {
+            "src": "/img/logo_prefectura.png", 
+            "sizes": "512x256", 
+            "type": "image/png"
+        }
+    ],
+    "form_factor": "wide",
+    "prefer_related_applications": false,
+    "scope": "/",
+    "screenshots": [
+        {
+            "src": "/img/mobile.png",
+            "sizes": "750x1334",
+            "type": "image/png"
+        },
+        {
+            "src": "/img/desktop.png",
+            "sizes": "1280x800",
+            "type": "image/png",
+            "form_factor": "wide"
+        }        
+    ],
+    "wide": true,
+    "id": "/index.html"
+}

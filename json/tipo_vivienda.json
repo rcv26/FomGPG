@@ -1,0 +1,19 @@
+[
+	{
+		"IDITEM": "AL",
+		"DESCRIPCION": "ALQUILADA"
+	},
+	{
+		"IDITEM": "PO",
+		"DESCRIPCION": "PROPIA"
+	},
+	
+	{
+		"IDITEM": "CO",
+		"DESCRIPCION": "COMPARTIDA"
+	},
+	{
+		"IDITEM": "PR",
+		"DESCRIPCION": "PRESTADA"
+	}
+]
